@@ -75,10 +75,10 @@ public class MapBuider : MonoBehaviour
 
         List<Vector2Int> neighbours = new List<Vector2Int>();
 
-        if (room.DoorU != null && p.y < maxY && spawnedRooms[p.x, p.y + 1]?.DoorD != null) neighbours.Add(Vector2Int.up);
-        if (room.DoorD != null && p.y > 0 && spawnedRooms[p.x, p.y - 1]?.DoorU != null) neighbours.Add(Vector2Int.down);
-        if (room.DoorR != null && p.x < maxX && spawnedRooms[p.x + 1, p.y]?.DoorL != null) neighbours.Add(Vector2Int.right);
-        if (room.DoorL != null && p.x > 0 && spawnedRooms[p.x - 1, p.y]?.DoorR != null) neighbours.Add(Vector2Int.left);
+        if (room.WayU != null && p.y < maxY && spawnedRooms[p.x, p.y + 1]?.WayD != null) neighbours.Add(Vector2Int.up);
+        if (room.WayD != null && p.y > 0 && spawnedRooms[p.x, p.y - 1]?.WayU != null) neighbours.Add(Vector2Int.down);
+        if (room.WayR != null && p.x < maxX && spawnedRooms[p.x + 1, p.y]?.WayL != null) neighbours.Add(Vector2Int.right);
+        if (room.WayL != null && p.x > 0 && spawnedRooms[p.x - 1, p.y]?.WayR != null) neighbours.Add(Vector2Int.left);
 
         if (neighbours.Count == 0) return false;
 
@@ -87,23 +87,23 @@ public class MapBuider : MonoBehaviour
 
         if (selectedDirection == Vector2Int.up)
         {
-            room.DoorU.SetActive(false);
-            selectedRoom.DoorD.SetActive(false);
+            room.WayU.SetActive(true);
+            selectedRoom.WayD.SetActive(true);
         }
         else if (selectedDirection == Vector2Int.down)
         {
-            room.DoorD.SetActive(false);
-            selectedRoom.DoorU.SetActive(false);
+            room.WayD.SetActive(true);
+            selectedRoom.WayU.SetActive(true);
         }
         else if (selectedDirection == Vector2Int.right)
         {
-            room.DoorR.SetActive(false);
-            selectedRoom.DoorL.SetActive(false);
+            room.WayR.SetActive(true);
+            selectedRoom.WayL.SetActive(true);
         }
         else if (selectedDirection == Vector2Int.left)
         {
-            room.DoorL.SetActive(false);
-            selectedRoom.DoorR.SetActive(false);
+            room.WayL.SetActive(true);
+            selectedRoom.WayR.SetActive(true);
         }
 
         return true;

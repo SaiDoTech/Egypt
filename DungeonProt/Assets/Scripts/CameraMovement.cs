@@ -13,7 +13,7 @@ public class CameraMovement : MonoBehaviour
     void Start()
     {
         currentRoom = mapBuider.StartRoom;
-        target = currentRoom.transform.position;
+        target = currentRoom.transform.position + new Vector3(0,0,-10); 
     }
 
     private void Update()
@@ -22,7 +22,7 @@ public class CameraMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            if (!currentRoom.DoorD.activeSelf)
+            if (currentRoom.WayD.activeSelf)
             {
                 changePosition(rooms[currentRoom.x, currentRoom.y-1]);
                 Debug.Log("Down");
@@ -30,7 +30,7 @@ public class CameraMovement : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            if (!currentRoom.DoorU.activeSelf)
+            if (currentRoom.WayU.activeSelf)
             {
                 changePosition(rooms[currentRoom.x, currentRoom.y+1]);
                 Debug.Log("Up");
@@ -38,7 +38,7 @@ public class CameraMovement : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            if (!currentRoom.DoorL.activeSelf)
+            if (currentRoom.WayL.activeSelf)
             {
                 changePosition(rooms[currentRoom.x-1, currentRoom.y]);
                 Debug.Log("Left");
@@ -46,7 +46,7 @@ public class CameraMovement : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            if (!currentRoom.DoorR.activeSelf)
+            if (currentRoom.WayR.activeSelf)
             {
                 changePosition(rooms[currentRoom.x+1, currentRoom.y]);
                 Debug.Log("Right");
