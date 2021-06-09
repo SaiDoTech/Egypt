@@ -13,13 +13,13 @@ public class CameraMovement : MonoBehaviour
     void Start()
     {
         currentRoom = mapBuider.StartRoom;
-        target = currentRoom.transform.position + new Vector3(0,0,-10); 
+        target = currentRoom.transform.position + new Vector3(0,0,-10);
+
+        rooms = mapBuider.spawnedRooms;
     }
 
     private void Update()
     {
-        rooms = mapBuider.spawnedRooms;
-
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             if (currentRoom.WayD.activeSelf)

@@ -14,7 +14,7 @@ public class MapBuider : MonoBehaviour
 
     public Room[,] spawnedRooms;
 
-    void Start()
+    private void Awake()
     {
         spawnedRooms = new Room[MapHeight, MapWidth];
 
