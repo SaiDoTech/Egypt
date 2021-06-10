@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RoomManager : MonoBehaviour
 {
+    public GameObject player;
+
     private MapBuider mapBuider;
     private Room[,] rooms;
     public Room currentRoom;
@@ -20,9 +22,10 @@ public class RoomManager : MonoBehaviour
         Room.ChangeRoomEvent += Room_ChangeCurrentRoom;
     }
 
-    private void Room_ChangeCurrentRoom(int nextX, int nextY)
+    private void Room_ChangeCurrentRoom(int nextX, int nextY, int spawnerIndx)
     {
         currentRoom = rooms[nextX, nextY];
+        player.transform.position = currentRoom.playerSpawners[spawnerIndx].position;
     }
 
     private void OnDisable()

@@ -7,11 +7,6 @@ public class CameraMovement : MonoBehaviour
     public RoomManager RoomManager;
     private Vector3 target;
 
-    void Start()
-    {
-        target = RoomManager.currentRoom.transform.position + new Vector3(0,0,-10);
-    }
-
     private void Update()
     {
         target = RoomManager.currentRoom.transform.position + new Vector3(0, 0, -10);
