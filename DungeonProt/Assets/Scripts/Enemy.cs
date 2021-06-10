@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public bool Alive;
+    public int HitPoints;
     public int DeathFrames;
     void Start()
     {
@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!Alive)
+        if (HitPoints <= 0)
         {
             if (DeathFrames != 0)
             {
@@ -26,19 +26,41 @@ public class Enemy : MonoBehaviour
             }
             else
             {
-                Destroy(gameObject);
+                Destroy(transform.parent.gameObject);
             }
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (Alive) Die();
+        Debug.Log("Enter");
+        if (collision.gameObject.tag == "Weapon" && HitPoints > 0)
+        {
+            HitPoints -= 10;
+            if (HitPoints <= 0)
+            {
+                Die();
+            }
+            else
+            {
+                gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Debug.Log("Exit");
+        if (collision.gameObject.tag == "Weapon" && HitPoints > 0)
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+        }
     }
 
     private void Die()
     {
-        Alive = false;
-        gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.red;
+        gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+        Destroy(gameObject.GetComponent<CapsuleCollider2D>());
+        Destroy(gameObject.transform.parent.gameObject.GetComponent<CapsuleCollider2D>());
     }
 }
