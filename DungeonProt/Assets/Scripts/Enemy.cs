@@ -4,15 +4,41 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public bool Alive;
+    public int DeathFrames;
     void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+    private void FixedUpdate()
+    {
+        if (!Alive)
+        {
+            if (DeathFrames != 0)
+            {
+                DeathFrames--;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (Alive) Die();
+    }
+
+    private void Die()
+    {
+        Alive = false;
+        gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.red;
     }
 }
