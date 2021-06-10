@@ -11,4 +11,9 @@ public class Room : MonoBehaviour
 
     public int x;
     public int y;
+
+    public void DetectWay(GameObject way)
+    {
+        Debug.Log(way.name);
+    }
 }
