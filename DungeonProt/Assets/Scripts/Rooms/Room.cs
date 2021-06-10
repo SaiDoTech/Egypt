@@ -17,6 +17,33 @@ public class Room : MonoBehaviour
 
     public void DetectWay(GameObject way)
     {
-        ChangeRoomEvent(1,1);
+        if (way != null)
+        {
+            int nextX = x;
+            int nextY = y;
+
+            if (way == WayU)
+            {
+                nextX = x;
+                nextY = y + 1;
+            }
+            else if (way == WayR)
+            {
+                nextX = x + 1;
+                nextY = y;
+            }
+            else if (way == WayD)
+            {
+                nextX = x;
+                nextY = y - 1;
+            }
+            else if (way == WayL)
+            {
+                nextX = x - 1;
+                nextY = y;
+            }
+
+            ChangeRoomEvent(nextX, nextY);
+        }
     }
 }

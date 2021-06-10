@@ -240,12 +240,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5e272120d6cc40240a4cf288272de84c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapBuider: {fileID: 756602569}
+  RoomManager: {fileID: 756602571}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -374,6 +374,7 @@ GameObject:
   m_Component:
   - component: {fileID: 756602570}
   - component: {fileID: 756602569}
+  - component: {fileID: 756602571}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -413,6 +414,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &756602571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756602568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c9b53a68cc596840a4ad58177b8e2e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentRoom: {fileID: 0}
 --- !u!1 &1625081626
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,7 +474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Alive: 1
-  DeathFrames: 30
+  DeathFrames: 0
 --- !u!4 &1625081629
 Transform:
   m_ObjectHideFlags: 0
