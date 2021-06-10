@@ -12,8 +12,11 @@ public class Room : MonoBehaviour
     public int x;
     public int y;
 
+    public delegate void ChangeRoomEventHandler(int x, int y);
+    public static event ChangeRoomEventHandler ChangeRoomEvent;
+
     public void DetectWay(GameObject way)
     {
-        Debug.Log(way.name);
+        ChangeRoomEvent(1,1);
     }
 }

@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class RoomManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
     {
-        
+        Room.ChangeRoomEvent += Room_ChangeCurrentRoom;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Room_ChangeCurrentRoom(int x, int y)
     {
-        
+
+    }
+
+    private void OnDisable()
+    {
+        Room.ChangeRoomEvent -= Room_ChangeCurrentRoom;
     }
 }
