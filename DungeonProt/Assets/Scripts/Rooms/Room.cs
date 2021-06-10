@@ -12,8 +12,16 @@ public class Room : MonoBehaviour
     public int x;
     public int y;
 
-    public delegate void ChangeRoomEventHandler(int x, int y);
+    public delegate void ChangeRoomEventHandler(int x, int y, int nexSpawnerInd);
     public static event ChangeRoomEventHandler ChangeRoomEvent;
+
+    public Transform[] playerSpawners;
+    public GameObject PlayerSpawners;
+
+    private void Start()
+    {
+        playerSpawners = PlayerSpawners.GetComponentsInChildren<Transform>();
+    }
 
     public void DetectWay(GameObject way)
     {
@@ -21,29 +29,34 @@ public class Room : MonoBehaviour
         {
             int nextX = x;
             int nextY = y;
+            int nextSpawner = 0;
 
             if (way == WayU)
             {
                 nextX = x;
                 nextY = y + 1;
+                nextSpawner = 4;
             }
             else if (way == WayR)
             {
                 nextX = x + 1;
                 nextY = y;
+                nextSpawner = 1;
             }
             else if (way == WayD)
             {
                 nextX = x;
                 nextY = y - 1;
+                nextSpawner = 2;
             }
             else if (way == WayL)
             {
                 nextX = x - 1;
                 nextY = y;
+                nextSpawner = 3;
             }
 
-            ChangeRoomEvent(nextX, nextY);
+            ChangeRoomEvent(nextX, nextY, nextSpawner);
         }
     }
 }
