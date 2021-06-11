@@ -24,8 +24,11 @@ public class RoomManager : MonoBehaviour
 
     private void Room_ChangeCurrentRoom(int nextX, int nextY, int spawnerIndx)
     {
-        currentRoom = rooms[nextX, nextY];
-        player.transform.position = currentRoom.playerSpawners[spawnerIndx].position;
+        if ((currentRoom != null) && (currentRoom.playerSpawners != null))
+        {
+            currentRoom = rooms[nextX, nextY];
+            player.transform.position = currentRoom.playerSpawners[spawnerIndx].position;
+        }
     }
 
     private void OnDisable()
