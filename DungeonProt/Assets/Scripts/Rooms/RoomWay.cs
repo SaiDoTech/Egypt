@@ -14,6 +14,9 @@ public class RoomWay : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag(PlayerTag))
+        {
+            Debug.Log("Way activated");
             parentRoom.DetectWay(gameObject);
+        }
     }
 }

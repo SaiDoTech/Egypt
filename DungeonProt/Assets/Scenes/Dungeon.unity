@@ -132,6 +132,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 648062327702252054, guid: 14f22c9cc1c3ec44ebede5990fe3451e,
         type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 648062327702252054, guid: 14f22c9cc1c3ec44ebede5990fe3451e,
+        type: 3}
       propertyPath: m_TagString
       value: Weapon
       objectReference: {fileID: 0}
@@ -195,10 +200,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6482397843151993445, guid: 14f22c9cc1c3ec44ebede5990fe3451e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2cf0d06f80427c347b0b4de585e01439,
+        type: 3}
     - target: {fileID: 6563105280026193033, guid: 14f22c9cc1c3ec44ebede5990fe3451e,
         type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9165216166224073861, guid: 14f22c9cc1c3ec44ebede5990fe3451e,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 9165216166224073861, guid: 14f22c9cc1c3ec44ebede5990fe3451e,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14f22c9cc1c3ec44ebede5990fe3451e, type: 3}
