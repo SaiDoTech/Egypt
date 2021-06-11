@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public int HitPoints;
-    public int DeathFrames;
+    public int DeathTicks;
     void Start()
     {
 
@@ -20,9 +20,9 @@ public class Enemy : MonoBehaviour
     {
         if (HitPoints <= 0)
         {
-            if (DeathFrames != 0)
+            if (DeathTicks != 0)
             {
-                DeathFrames--;
+                DeathTicks--;
             }
             else
             {

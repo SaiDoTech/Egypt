@@ -130,6 +130,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 648062327702252054, guid: 14f22c9cc1c3ec44ebede5990fe3451e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Weapon
+      objectReference: {fileID: 0}
     - target: {fileID: 1139305483663266193, guid: 14f22c9cc1c3ec44ebede5990fe3451e,
         type: 3}
       propertyPath: m_Name
@@ -189,6 +194,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6563105280026193033, guid: 14f22c9cc1c3ec44ebede5990fe3451e,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14f22c9cc1c3ec44ebede5990fe3451e, type: 3}
@@ -330,6 +340,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnemyObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312853106756742240, guid: f0dad7cc0df8a5645adad7b80167649a,
+        type: 3}
+      propertyPath: HitPoints
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312853106756742240, guid: f0dad7cc0df8a5645adad7b80167649a,
+        type: 3}
+      propertyPath: DeathTicks
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312853106756742240, guid: f0dad7cc0df8a5645adad7b80167649a,
+        type: 3}
+      propertyPath: DeathFrames
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0dad7cc0df8a5645adad7b80167649a, type: 3}
