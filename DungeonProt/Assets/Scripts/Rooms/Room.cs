@@ -36,24 +36,28 @@ public class Room : MonoBehaviour
                 nextX = x;
                 nextY = y + 1;
                 nextSpawner = 4;
+                Debug.Log("ToUp");
             }
             else if (way == WayR)
             {
                 nextX = x + 1;
                 nextY = y;
                 nextSpawner = 1;
+                Debug.Log("ToRight");
             }
             else if (way == WayD)
             {
                 nextX = x;
                 nextY = y - 1;
                 nextSpawner = 2;
+                Debug.Log("ToDown");
             }
             else if (way == WayL)
             {
                 nextX = x - 1;
                 nextY = y;
                 nextSpawner = 3;
+                Debug.Log("ToLeft");
             }
 
             ChangeRoomEvent(nextX, nextY, nextSpawner);
