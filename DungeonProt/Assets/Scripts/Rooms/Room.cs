@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Room : MonoBehaviour
 {
-    public GameObject WayU;
-    public GameObject WayR;
-    public GameObject WayD;
-    public GameObject WayL;
+    public GameObject TopWay;
+    public GameObject RightWay;
+    public GameObject BottomWay;
+    public GameObject LeftWay;
 
     public int x;
     public int y;
@@ -15,13 +15,7 @@ public class Room : MonoBehaviour
     public delegate void ChangeRoomEventHandler(int x, int y, int nexSpawnerInd);
     public static event ChangeRoomEventHandler ChangeRoomEvent;
 
-    public Transform[] playerSpawners;
-    public GameObject PlayerSpawners;
-
-    private void Start()
-    {
-        playerSpawners = PlayerSpawners.GetComponentsInChildren<Transform>();
-    }
+    public Transform[] PlayerSpawners;
 
     public void DetectWay(GameObject way)
     {
@@ -31,33 +25,29 @@ public class Room : MonoBehaviour
             int nextY = y;
             int nextSpawner = 0;
 
-            if (way == WayU)
+            if (way == TopWay)
             {
                 nextX = x;
                 nextY = y + 1;
-                nextSpawner = 4;
-                Debug.Log("ToUp");
+                nextSpawner = 3;
             }
-            else if (way == WayR)
+            else if (way == RightWay)
             {
                 nextX = x + 1;
                 nextY = y;
-                nextSpawner = 1;
-                Debug.Log("ToRight");
+                nextSpawner = 0;
             }
-            else if (way == WayD)
+            else if (way == BottomWay)
             {
                 nextX = x;
                 nextY = y - 1;
-                nextSpawner = 2;
-                Debug.Log("ToDown");
+                nextSpawner = 1;
             }
-            else if (way == WayL)
+            else if (way == LeftWay)
             {
                 nextX = x - 1;
                 nextY = y;
-                nextSpawner = 3;
-                Debug.Log("ToLeft");
+                nextSpawner = 2;
             }
 
             ChangeRoomEvent(nextX, nextY, nextSpawner);

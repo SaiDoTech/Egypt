@@ -75,10 +75,14 @@ public class MapBuider : MonoBehaviour
 
         List<Vector2Int> neighbours = new List<Vector2Int>();
 
-        if (room.WayU != null && p.y < maxY && spawnedRooms[p.x, p.y + 1]?.WayD != null) neighbours.Add(Vector2Int.up);
-        if (room.WayD != null && p.y > 0 && spawnedRooms[p.x, p.y - 1]?.WayU != null) neighbours.Add(Vector2Int.down);
-        if (room.WayR != null && p.x < maxX && spawnedRooms[p.x + 1, p.y]?.WayL != null) neighbours.Add(Vector2Int.right);
-        if (room.WayL != null && p.x > 0 && spawnedRooms[p.x - 1, p.y]?.WayR != null) neighbours.Add(Vector2Int.left);
+        if (room.TopWay != null && p.y < maxY && spawnedRooms[p.x, p.y + 1]?.BottomWay != null)
+            neighbours.Add(Vector2Int.up);
+        if (room.BottomWay != null && p.y > 0 && spawnedRooms[p.x, p.y - 1]?.TopWay != null)
+            neighbours.Add(Vector2Int.down);
+        if (room.RightWay != null && p.x < maxX && spawnedRooms[p.x + 1, p.y]?.LeftWay != null)
+            neighbours.Add(Vector2Int.right);
+        if (room.LeftWay != null && p.x > 0 && spawnedRooms[p.x - 1, p.y]?.RightWay != null)
+            neighbours.Add(Vector2Int.left);
 
         if (neighbours.Count == 0) return false;
 
@@ -87,23 +91,23 @@ public class MapBuider : MonoBehaviour
 
         if (selectedDirection == Vector2Int.up)
         {
-            room.WayU.SetActive(true);
-            selectedRoom.WayD.SetActive(true);
+            room.TopWay.SetActive(true);
+            selectedRoom.BottomWay.SetActive(true);
         }
         else if (selectedDirection == Vector2Int.down)
         {
-            room.WayD.SetActive(true);
-            selectedRoom.WayU.SetActive(true);
+            room.BottomWay.SetActive(true);
+            selectedRoom.TopWay.SetActive(true);
         }
         else if (selectedDirection == Vector2Int.right)
         {
-            room.WayR.SetActive(true);
-            selectedRoom.WayL.SetActive(true);
+            room.RightWay.SetActive(true);
+            selectedRoom.LeftWay.SetActive(true);
         }
         else if (selectedDirection == Vector2Int.left)
         {
-            room.WayL.SetActive(true);
-            selectedRoom.WayR.SetActive(true);
+            room.LeftWay.SetActive(true);
+            selectedRoom.RightWay.SetActive(true);
         }
 
         return true;

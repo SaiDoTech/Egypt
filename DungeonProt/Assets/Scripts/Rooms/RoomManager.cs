@@ -24,10 +24,10 @@ public class RoomManager : MonoBehaviour
 
     private void Room_ChangeCurrentRoom(int nextX, int nextY, int spawnerIndx)
     {
-        if ((currentRoom != null) && (currentRoom.playerSpawners != null))
+        if ((currentRoom != null) && (currentRoom.PlayerSpawners != null))
         {
             currentRoom = rooms[nextX, nextY];
-            player.transform.position = currentRoom.playerSpawners[spawnerIndx].position;
+            player.transform.position = currentRoom.PlayerSpawners[spawnerIndx].position;
         }
     }
 
@@ -36,3 +36,4 @@ public class RoomManager : MonoBehaviour
         Room.ChangeRoomEvent -= Room_ChangeCurrentRoom;
     }
 }
+
