@@ -2,34 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce5d208b-bc20-4494-95f7-3634c169b0ed" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/InputController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/IHealable.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/IHealable.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/IMovable.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/IMovable.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/ISpell.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/ISpell.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/IUnit.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/IUnit.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/IWizzard.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/IWizzard.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Player.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Player.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Weapon.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Weapon.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/hero.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/hero.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/heroNew.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/heroNew.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/skarabei.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/skarabei.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DungeonProt/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DungeonProt/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/DungeonNew.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DungeonNew.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GoldBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GoldBar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Movement/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Movement/PlayerMovement.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -1101,7 +1101,6 @@ GameObject:
   - component: {fileID: 1306753194}
   - component: {fileID: 1306753195}
   - component: {fileID: 1306753196}
-  - component: {fileID: 1306753197}
   m_Layer: 0
   m_Name: MoneyBar
   m_TagString: UI
@@ -1215,20 +1214,6 @@ PolygonCollider2D:
       - {x: 1.39, y: -0.65}
       - {x: 1.54, y: -0.59999996}
       - {x: 1.74, y: -0.42}
---- !u!114 &1306753197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1306753193}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e8800b9228fe4284a6e80ad46762a31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: {fileID: 1809352380}
-  money: 0
 --- !u!1 &1376336128
 GameObject:
   m_ObjectHideFlags: 0
