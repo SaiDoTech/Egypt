@@ -1952,7 +1952,7 @@ PrefabInstance:
     - target: {fileID: 6312853106756742240, guid: f0dad7cc0df8a5645adad7b80167649a,
         type: 3}
       propertyPath: hurtTicks
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6312853106756742240, guid: f0dad7cc0df8a5645adad7b80167649a,
         type: 3}

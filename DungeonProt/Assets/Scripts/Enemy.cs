@@ -47,6 +47,7 @@ public class Enemy : MonoBehaviour
     {
         if (currentHealth > 0)
         {
+            Debug.Log("blue");
             gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
             inHurt = true;
             hurtTicksLeft = hurtTicks;
@@ -55,11 +56,12 @@ public class Enemy : MonoBehaviour
 
     private void TakeDamageFixedUpdate()
     {
-        if (inHurt)
+        if (inHurt && currentHealth > 0)
         {
             if (--hurtTicksLeft == 0)
             {
                 inHurt = false;
+                Debug.Log("white");
                 gameObject.GetComponent<SpriteRenderer>().color = Color.white;
             }
         }
@@ -68,6 +70,7 @@ public class Enemy : MonoBehaviour
     private void Die()
     {
         //animation lol
+        Debug.Log("red");
         gameObject.GetComponent<SpriteRenderer>().color = Color.red;
 
         //disable
