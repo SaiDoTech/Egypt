@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal"); // Нажатия для x
         movement.y = Input.GetAxisRaw("Vertical"); // Нажатия для y
+
         animator.SetFloat("Speed", movement.sqrMagnitude); // выставление скорости в состоянии (не является скоростью)
         if (movement.sqrMagnitude == 0) //если перемещение закончилось, зафиксировать в состояниях текущее направление героя
         {
