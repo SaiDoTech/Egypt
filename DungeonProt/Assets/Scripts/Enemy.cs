@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public int HitPoints;
-    public int DeathTicks;
+    public int maxHealth = 100;
+    private int currentHealth;
+
+    // cause no animation yet
+    private bool inHurt;
+    public int hurtTicks = 20;
+    private int hurtTicksLeft;
+
     void Start()
     {
-
+        currentHealth = maxHealth;
+        inHurt = false;
     }
 
     void Update()
@@ -16,51 +23,55 @@ public class Enemy : MonoBehaviour
 
     }
 
+    // cause no animation yet
     private void FixedUpdate()
     {
-        if (HitPoints <= 0)
+        TakeDamageFixedUpdate();
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        //animation lol
+        TakeDamageAnimation();
+
+        if (currentHealth <= 0)
         {
-            if (DeathTicks != 0)
-            {
-                DeathTicks--;
-            }
-            else
-            {
-                Destroy(transform.parent.gameObject);
-            }
+            Die();
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    // cause no animation yet
+    private void TakeDamageAnimation()
     {
-        Debug.Log("Enter");
-        if (collision.gameObject.tag == "Weapon" && HitPoints > 0)
+        if (currentHealth > 0)
         {
-            HitPoints -= 10;
-            if (HitPoints <= 0)
-            {
-                Die();
-            }
-            else
-            {
-                gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
-            }
+            gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
+            inHurt = true;
+            hurtTicksLeft = hurtTicks;
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void TakeDamageFixedUpdate()
     {
-        Debug.Log("Exit");
-        if (collision.gameObject.tag == "Weapon" && HitPoints > 0)
+        if (inHurt)
         {
-            gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+            if (--hurtTicksLeft == 0)
+            {
+                inHurt = false;
+                gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+            }
         }
     }
 
     private void Die()
     {
+        //animation lol
         gameObject.GetComponent<SpriteRenderer>().color = Color.red;
-        Destroy(gameObject.GetComponent<CapsuleCollider2D>());
-        Destroy(gameObject.transform.parent.gameObject.GetComponent<CapsuleCollider2D>());
+
+        //disable
+        gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
+        gameObject.transform.parent.gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
     }
 }
