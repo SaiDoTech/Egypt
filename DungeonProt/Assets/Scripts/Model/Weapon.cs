@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapon
+public abstract class Weapon
 {
     public int Damage;
     public float Distance;

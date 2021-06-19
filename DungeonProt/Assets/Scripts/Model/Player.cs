@@ -68,9 +68,12 @@ public class Player : MonoBehaviour,
 
     public void TakeDamage(int damage)
     {
-        if (damage >= Health)
+        Health -= damage;
+
+        if (Health <= 0)
+        {
+            Health = 0;
             Die();
-        else
-            Health -= damage;
+        }
     }
 }
