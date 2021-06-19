@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 289249628721185650}
   - component: {fileID: 8773522841966889915}
   - component: {fileID: 6312853106756742240}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,8 +112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca14f87ebc94552419d8ba8a6a97dae9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HitPoints: 0
-  DeathTicks: 0
+  HitPoints: 100
+  DeathTicks: 50
 --- !u!1 &289249629104937703
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,7 +124,7 @@ GameObject:
   m_Component:
   - component: {fileID: 289249629104937696}
   - component: {fileID: 1665473153272667651}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EnemyObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
