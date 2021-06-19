@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
 
     // cause no animation yet
     private bool inHurt;
-    public int hurtTicks = 20;
+    public int hurtTicks = 0;
     private int hurtTicksLeft;
 
     void Start()
@@ -47,10 +47,9 @@ public class Enemy : MonoBehaviour
     {
         if (currentHealth > 0)
         {
-            Debug.Log("blue");
             gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
-            inHurt = true;
             hurtTicksLeft = hurtTicks;
+            inHurt = true;
         }
     }
 
@@ -61,7 +60,6 @@ public class Enemy : MonoBehaviour
             if (--hurtTicksLeft == 0)
             {
                 inHurt = false;
-                Debug.Log("white");
                 gameObject.GetComponent<SpriteRenderer>().color = Color.white;
             }
         }
@@ -70,7 +68,6 @@ public class Enemy : MonoBehaviour
     private void Die()
     {
         //animation lol
-        Debug.Log("red");
         gameObject.GetComponent<SpriteRenderer>().color = Color.red;
 
         //disable

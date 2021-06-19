@@ -112,8 +112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca14f87ebc94552419d8ba8a6a97dae9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HitPoints: 100
-  DeathTicks: 50
+  maxHealth: 100
+  hurtTicks: 10
 --- !u!1 &289249629104937703
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,7 +124,7 @@ GameObject:
   m_Component:
   - component: {fileID: 289249629104937696}
   - component: {fileID: 1665473153272667651}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: EnemyObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
