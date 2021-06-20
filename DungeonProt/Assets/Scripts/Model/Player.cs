@@ -9,7 +9,7 @@ public class Player : MonoBehaviour,
                       IWizzard
 
 {
-    public int Health { get; set; } = 100;
+    public int Health { get; set; } = 30;
     public int MaxHealth { get; set; } = 100;
     public float MoveSpeed { get; set; } = 4;
     public int ManaPoints { get; set; } = 100;
