@@ -52,11 +52,19 @@ public class MapBuider : MonoBehaviour
         var max = roomPath.Max(s => s.Value);
         var result = roomPath.Where(s => s.Value.Equals(max)).Select(s => s.Key).ToList();
 
-        int finallX = result[0].x;
-        int finallY = result[0].y;
+        var bossRoom = Instantiate(FinallRoom, new Vector3((result[0].x - (spawnedRooms.GetLength(0) / 2)) * 17.8f,
+                                                           (result[0].y - (spawnedRooms.GetLength(1) / 2)) * 10, 0), 
+                                                           Quaternion.identity);
+
+        bossRoom.TopWay.SetActive(result[0].TopWay.activeSelf);
+        bossRoom.LeftWay.SetActive(result[0].LeftWay.activeSelf);
+        bossRoom.BottomWay.SetActive(result[0].BottomWay.activeSelf);
+        bossRoom.RightWay.SetActive(result[0].RightWay.activeSelf);
+        bossRoom.x = result[0].x;
+        bossRoom.y = result[0].y;
+        spawnedRooms[result[0].x, result[0].y] = bossRoom;
 
         Destroy(result[0].gameObject);
-        Instantiate(FinallRoom, new Vector3((finallX - (spawnedRooms.GetLength(0) / 2)) * 17.8f, (finallY - (spawnedRooms.GetLength(1) / 2)) * 10, 0), Quaternion.identity);
     }
 
     private void PlaceOneRoom()
