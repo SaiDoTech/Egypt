@@ -7,6 +7,10 @@ public class Enemy : MonoBehaviour
     public int maxHealth = 100;
     private int currentHealth;
 
+    public float repulseRange = 1f;
+    private Vector3 vectorRepulse;
+    private Vector3 startRepulsePosition;
+
     // cause no animation yet
     private bool inHurt;
     public int hurtTicks = 0;
@@ -50,6 +54,9 @@ public class Enemy : MonoBehaviour
             gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
             hurtTicksLeft = hurtTicks;
             inHurt = true;
+
+            vectorRepulse = 2 * gameObject.transform.position - GameObject.FindGameObjectWithTag("Player").transform.position; // calc position to repulse
+            startRepulsePosition = gameObject.transform.position;
         }
     }
 
@@ -62,6 +69,10 @@ public class Enemy : MonoBehaviour
                 inHurt = false;
                 gameObject.GetComponent<SpriteRenderer>().color = Color.white;
             }
+            else
+            {
+                gameObject.transform.parent.gameObject.GetComponent<Rigidbody2D>().MovePosition(Vector3.Lerp(startRepulsePosition, repulseRange * vectorRepulse, ((float)(hurtTicks - hurtTicksLeft)) / hurtTicks)); // Lerp repulse
+            }
         }
     }
 
@@ -73,5 +84,7 @@ public class Enemy : MonoBehaviour
         //disable
         gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
         gameObject.transform.parent.gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
+
+        gameObject.transform.parent.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
     }
 }
