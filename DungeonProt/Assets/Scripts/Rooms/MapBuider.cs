@@ -11,8 +11,11 @@ public class MapBuider : MonoBehaviour
 
     public Room[] RoomPrefabs;
     public Room StartRoom;
+    public Room FinallRoom;
 
     public Room[,] spawnedRooms;
+    public Dictionary<Room, int> roomPath;
+    public List<RoomNode> roomNodes;
 
     private void Awake()
     {
@@ -22,10 +25,38 @@ public class MapBuider : MonoBehaviour
         StartRoom.y = spawnedRooms.GetLength(1) / 2;
         spawnedRooms[StartRoom.x, StartRoom.y] = StartRoom;
 
+        var roomSearch = new RoomSearch();
+
+        roomPath = new Dictionary<Room, int>();
+
+        roomNodes = new List<RoomNode>();
+        roomNodes.Add(new RoomNode(StartRoom));
+
         for (int i = 0; i < RoomCount; i++)
         {
             PlaceOneRoom();
         }
+
+        for (int x = 0; x < spawnedRooms.GetLength(0); x++)
+        {
+            for (int y = 0; y < spawnedRooms.GetLength(1); y++)
+            {
+                if (spawnedRooms[x, y] != null)
+                {
+                    var temp = roomSearch.DFS(roomNodes[0], roomNodes.Find(j => j.Room == spawnedRooms[x,y]));
+                    roomPath.Add(spawnedRooms[x, y], temp.Count);
+                }
+            }
+        }
+
+        var max = roomPath.Max(s => s.Value);
+        var result = roomPath.Where(s => s.Value.Equals(max)).Select(s => s.Key).ToList();
+
+        int finallX = result[0].x;
+        int finallY = result[0].y;
+
+        Destroy(result[0].gameObject);
+        Instantiate(FinallRoom, new Vector3((finallX - (spawnedRooms.GetLength(0) / 2)) * 17.8f, (finallY - (spawnedRooms.GetLength(1) / 2)) * 10, 0), Quaternion.identity);
     }
 
     private void PlaceOneRoom()
@@ -55,20 +86,27 @@ public class MapBuider : MonoBehaviour
         {
             Vector2Int position = vacantPlaces.ElementAt(Random.Range(0, vacantPlaces.Count));
 
-            if (ConnectToSomething(newRoom, position))
+            var room = ConnectToSomething(newRoom, position);
+
+            if (room != null)
             {
                 newRoom.transform.position = new Vector3((position.x - (spawnedRooms.GetLength(0) / 2)) * 17.8f, (position.y - (spawnedRooms.GetLength(1) / 2)) * 10, 0);
                 spawnedRooms[position.x, position.y] = newRoom;
-                // Немного быдлокода
+
                 newRoom.x = position.x;
                 newRoom.y = position.y;
+
+                // Тут добавляем узел графа
+                var newNode = new RoomNode(newRoom);
+                roomNodes.Add(newNode);
+                roomNodes.Find(x => x.Room == room).AddChildren(newNode);
 
                 break;
             }
         }
     }
 
-    private bool ConnectToSomething(Room room, Vector2Int p)
+    private Room ConnectToSomething(Room room, Vector2Int p)
     {
         int maxX = spawnedRooms.GetLength(0) - 1;
         int maxY = spawnedRooms.GetLength(1) - 1;
@@ -84,7 +122,7 @@ public class MapBuider : MonoBehaviour
         if (room.LeftWay != null && p.x > 0 && spawnedRooms[p.x - 1, p.y]?.RightWay != null)
             neighbours.Add(Vector2Int.left);
 
-        if (neighbours.Count == 0) return false;
+        if (neighbours.Count == 0) return null;
 
         Vector2Int selectedDirection = neighbours[Random.Range(0, neighbours.Count)];
         Room selectedRoom = spawnedRooms[p.x + selectedDirection.x, p.y + selectedDirection.y];
@@ -110,6 +148,6 @@ public class MapBuider : MonoBehaviour
             selectedRoom.RightWay.SetActive(true);
         }
 
-        return true;
+        return selectedRoom;
     }
 }

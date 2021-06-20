@@ -1266,6 +1266,8 @@ MonoBehaviour:
   RoomPrefabs:
   - {fileID: 1731835029929190241, guid: 79835723f53205a4ab73732f28dd1bd8, type: 3}
   StartRoom: {fileID: 400363258}
+  FinallRoom: {fileID: 1867754752989160722, guid: 384bd3d941397b84fbcd7313223905ef,
+    type: 3}
 --- !u!4 &1382135871
 Transform:
   m_ObjectHideFlags: 0
@@ -2227,6 +2229,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: StartRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702129796632075191, guid: 4ebd4790bde71c8468b7b128265b0cee,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ebd4790bde71c8468b7b128265b0cee, type: 3}

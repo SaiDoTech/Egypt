@@ -25,7 +25,6 @@ public class CursorController : MonoBehaviour
     {
         if (collision.CompareTag("UI"))
         {
-            Debug.Log("Interface");
             GetComponent<SpriteRenderer>().sprite = uiSpriteMode;
         }
     }
