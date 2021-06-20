@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public Animator animator;
+
     public int maxHealth = 100;
     private int currentHealth;
 
@@ -13,7 +15,7 @@ public class Enemy : MonoBehaviour
 
     // cause no animation yet
     private bool inHurt;
-    public int hurtTicks = 0;
+    public int hurtTicks = 10;
     private int hurtTicksLeft;
 
     public GameObject[] dropsItem;
@@ -81,7 +83,7 @@ public class Enemy : MonoBehaviour
     private void Die()
     {
         //animation lol
-        gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+        animator.SetTrigger("Die");
 
         //disable
         gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
