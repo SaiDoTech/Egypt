@@ -2290,6 +2290,52 @@ PolygonCollider2D:
       - {x: 0.22999999, y: -1.88}
       - {x: 0.39, y: -1.79}
       - {x: 0.48999998, y: -1.67}
+--- !u!1 &1029642689 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 326542049064915691, guid: 312159f8930b7d049acf6fa5ff3c92c0,
+    type: 3}
+  m_PrefabInstance: {fileID: 326542047705096561}
+  m_PrefabAsset: {fileID: 0}
+--- !u!60 &1029642690
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029642689}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -36.51947, y: -78.64774}
+      - {x: -58.700184, y: -79.34193}
+      - {x: -156.15166, y: -80.36048}
+      - {x: -257.50928, y: -80.072426}
+      - {x: -291.2127, y: -63.803596}
+      - {x: -300.98822, y: -44.54239}
+      - {x: -300.65228, y: -32.608566}
+      - {x: -287.77554, y: -11.877739}
+      - {x: -257.9887, y: 0.03714943}
+      - {x: -47.442318, y: -0.11501932}
+      - {x: -23.354351, y: -6.584315}
+      - {x: -8.292118, y: -20.17121}
+      - {x: -0.6364764, y: -32.641685}
+      - {x: -1.0786905, y: -50.80596}
+      - {x: -20.436157, y: -71.12812}
 --- !u!1 &1065538177
 GameObject:
   m_ObjectHideFlags: 0
@@ -8750,6 +8796,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 288864850913331562, guid: 474d6d40267d06e42be4767d395d3b24,
+        type: 3}
+      propertyPath: Speed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 288864850913331562, guid: 474d6d40267d06e42be4767d395d3b24,
+        type: 3}
+      propertyPath: Cooldown
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 288864850913331562, guid: 474d6d40267d06e42be4767d395d3b24,
+        type: 3}
+      propertyPath: Distance
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 288864850913331562, guid: 474d6d40267d06e42be4767d395d3b24,
+        type: 3}
+      propertyPath: CursorTransform
+      value: 
+      objectReference: {fileID: 2068702176}
+    - target: {fileID: 288864850913331562, guid: 474d6d40267d06e42be4767d395d3b24,
+        type: 3}
+      propertyPath: layerMask.m_Bits
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2378283552798380378, guid: 474d6d40267d06e42be4767d395d3b24,
+        type: 3}
+      propertyPath: m_Name
+      value: Trail
+      objectReference: {fileID: 0}
     - target: {fileID: 6925694770226225708, guid: 474d6d40267d06e42be4767d395d3b24,
         type: 3}
       propertyPath: m_Name
