@@ -15,7 +15,6 @@ public class AgentScript : MonoBehaviour
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform; //получения объекта игрока
-
         agent = GetComponent<NavMeshAgent>();//настройка агента navmesh
         agent.updateRotation = false;
         agent.updateUpAxis = false;

@@ -1,5 +1,70 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &107621972460367112
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3833486672280964291}
+  - component: {fileID: 115612367151812554}
+  m_Layer: 0
+  m_Name: NavMesh
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3833486672280964291
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107621972460367112}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: -0.034999847, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1867754752989160721}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &115612367151812554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107621972460367112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 148387606d0ccd84fa326ca211f274ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 2
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 1
+  m_OverrideByGrid: 0
+  m_UseMeshPrefab: {fileID: 0}
+  m_CompressBounds: 0
+  m_OverrideVector: {x: 1, y: 1, z: 1}
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.06666667
+  m_BuildHeightMesh: 0
+  m_HideEditorLogs: 0
+  m_NavMeshData: {fileID: 23800000, guid: 9d28ecdc26eaf7145b36beaf0acdcd81, type: 2}
 --- !u!1 &266919329805998742
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,6 +682,7 @@ GameObject:
   - component: {fileID: 3500333842088060091}
   - component: {fileID: 6506749966639223997}
   - component: {fileID: 9121516395477588864}
+  - component: {fileID: 2024044714520120449}
   m_Layer: 0
   m_Name: jug_1 (2)
   m_TagString: Untagged
@@ -760,6 +826,22 @@ PolygonCollider2D:
       - {x: 0.53999996, y: -1.24}
       - {x: 0.56, y: -1.09}
       - {x: 0.52, y: -1.01}
+--- !u!114 &2024044714520120449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227214685698565182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1247463228266415857
 GameObject:
   m_ObjectHideFlags: 0
@@ -1135,14 +1217,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1751334101308125242}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3631003945615558493}
   - {fileID: 2380704060696838441}
   m_Father: {fileID: 1867754752989160721}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1867754751837686681
 GameObject:
@@ -1167,7 +1249,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1867754751837686681}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1189,6 +1271,7 @@ GameObject:
   - component: {fileID: 1867754752208873754}
   - component: {fileID: 1867754752208873755}
   - component: {fileID: 1867754752208873756}
+  - component: {fileID: 8418321608668460628}
   m_Layer: 0
   m_Name: WallTop
   m_TagString: Untagged
@@ -1287,6 +1370,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 46.85, y: 2.796781}
   m_EdgeRadius: 0
+--- !u!114 &8418321608668460628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867754752208873753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1867754752633758285
 GameObject:
   m_ObjectHideFlags: 0
@@ -1298,6 +1397,7 @@ GameObject:
   - component: {fileID: 1867754752633758286}
   - component: {fileID: 1867754752633758287}
   - component: {fileID: 1867754752633758272}
+  - component: {fileID: 8983856786041866700}
   m_Layer: 0
   m_Name: WallBottom
   m_TagString: Untagged
@@ -1396,6 +1496,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 46.85, y: 2.8320675}
   m_EdgeRadius: 0
+--- !u!114 &8983856786041866700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867754752633758285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1867754752776482533
 GameObject:
   m_ObjectHideFlags: 0
@@ -1406,6 +1522,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1867754752776482534}
   - component: {fileID: 1867754752776482535}
+  - component: {fileID: 3679197176597673642}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -1422,7 +1539,7 @@ Transform:
   m_GameObject: {fileID: 1867754752776482533}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.38, y: 0.38, z: 1}
+  m_LocalScale: {x: 0.38, y: 0.38000003, z: 1}
   m_Children: []
   m_Father: {fileID: 1867754752989160721}
   m_RootOrder: 0
@@ -1478,6 +1595,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3679197176597673642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867754752776482533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1867754752989160720
 GameObject:
   m_ObjectHideFlags: 0
@@ -1509,9 +1642,10 @@ Transform:
   - {fileID: 1867754752776482534}
   - {fileID: 1867754753240375850}
   - {fileID: 1867754751837686682}
+  - {fileID: 6248153524452589458}
   - {fileID: 1627747637902916614}
   - {fileID: 4204048476255546519}
-  - {fileID: 6248153524452589458}
+  - {fileID: 3833486672280964291}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1549,6 +1683,7 @@ GameObject:
   - component: {fileID: 1867754753142396846}
   - component: {fileID: 1867754753142396847}
   - component: {fileID: 1867754753142396832}
+  - component: {fileID: 7744552697545361990}
   m_Layer: 0
   m_Name: WallLeft
   m_TagString: Untagged
@@ -1647,6 +1782,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.2338433, y: 27.003656}
   m_EdgeRadius: 0
+--- !u!114 &7744552697545361990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867754753142396845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1867754753240375849
 GameObject:
   m_ObjectHideFlags: 0
@@ -1670,7 +1821,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1867754753240375849}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1692,6 +1843,7 @@ GameObject:
   - component: {fileID: 1867754753344756602}
   - component: {fileID: 1867754753344756603}
   - component: {fileID: 1867754753344756604}
+  - component: {fileID: 779985155405125701}
   m_Layer: 0
   m_Name: WallRight
   m_TagString: Untagged
@@ -1790,6 +1942,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.2327104, y: 27.003656}
   m_EdgeRadius: 0
+--- !u!114 &779985155405125701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867754753344756601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &2013998928373910574
 GameObject:
   m_ObjectHideFlags: 0
@@ -1831,6 +1999,7 @@ GameObject:
   - component: {fileID: 4768453625563532387}
   - component: {fileID: 5685887782975809988}
   - component: {fileID: 2194392467660208039}
+  - component: {fileID: 4850672331973564630}
   m_Layer: 0
   m_Name: jug_2
   m_TagString: Untagged
@@ -1974,6 +2143,22 @@ PolygonCollider2D:
       - {x: 0.53999996, y: -1.24}
       - {x: 0.56, y: -1.09}
       - {x: 0.52, y: -1.01}
+--- !u!114 &4850672331973564630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2348110016611928795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &2442613280469687818
 GameObject:
   m_ObjectHideFlags: 0
@@ -2099,6 +2284,7 @@ GameObject:
   - component: {fileID: 2430296952182907566}
   - component: {fileID: 4709117702053986312}
   - component: {fileID: 1104581705614655938}
+  - component: {fileID: 7652769205928399413}
   m_Layer: 0
   m_Name: pharaon_statue_8_special
   m_TagString: Untagged
@@ -2271,6 +2457,22 @@ PolygonCollider2D:
       - {x: 0.35, y: -2.37}
       - {x: 0.52, y: -2.28}
       - {x: 0.69, y: -2.1699998}
+--- !u!114 &7652769205928399413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2565053678759879790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &2597724166084415246
 GameObject:
   m_ObjectHideFlags: 0
@@ -2414,6 +2616,7 @@ GameObject:
   - component: {fileID: 493365028232520170}
   - component: {fileID: 3855732895733765567}
   - component: {fileID: 2161474877988997919}
+  - component: {fileID: 3291935054429424199}
   m_Layer: 0
   m_Name: pharaon_statue_8_special (2)
   m_TagString: Untagged
@@ -2586,6 +2789,22 @@ PolygonCollider2D:
       - {x: 0.35, y: -2.37}
       - {x: 0.52, y: -2.28}
       - {x: 0.69, y: -2.1699998}
+--- !u!114 &3291935054429424199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2751961827398110505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &2829279668546284380
 GameObject:
   m_ObjectHideFlags: 0
@@ -2673,6 +2892,7 @@ GameObject:
   - component: {fileID: 5464057563162326600}
   - component: {fileID: 1946321078635199407}
   - component: {fileID: 1478016409380990265}
+  - component: {fileID: 5200302515345829520}
   m_Layer: 0
   m_Name: jug_1 (3)
   m_TagString: Untagged
@@ -2816,6 +3036,22 @@ PolygonCollider2D:
       - {x: 0.53999996, y: -1.24}
       - {x: 0.56, y: -1.09}
       - {x: 0.52, y: -1.01}
+--- !u!114 &5200302515345829520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2903401754563776698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &3106272504435860747
 GameObject:
   m_ObjectHideFlags: 0
@@ -2827,6 +3063,7 @@ GameObject:
   - component: {fileID: 5069725786828101218}
   - component: {fileID: 7996422281847341403}
   - component: {fileID: 3981416486998760907}
+  - component: {fileID: 4462314491808080251}
   m_Layer: 0
   m_Name: pharaon_statue_5 (1)
   m_TagString: Untagged
@@ -2999,6 +3236,22 @@ PolygonCollider2D:
       - {x: 0.35, y: -2.37}
       - {x: 0.52, y: -2.28}
       - {x: 0.69, y: -2.1699998}
+--- !u!114 &4462314491808080251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3106272504435860747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &3612651328046742079
 GameObject:
   m_ObjectHideFlags: 0
@@ -3070,6 +3323,7 @@ GameObject:
   - component: {fileID: 7833517563041037780}
   - component: {fileID: 698958371117487955}
   - component: {fileID: 432380268831772711}
+  - component: {fileID: 4365636840708013961}
   m_Layer: 0
   m_Name: pharaon_statue_8_special (3)
   m_TagString: Untagged
@@ -3242,6 +3496,22 @@ PolygonCollider2D:
       - {x: 0.35, y: -2.37}
       - {x: 0.52, y: -2.28}
       - {x: 0.69, y: -2.1699998}
+--- !u!114 &4365636840708013961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4215012199243429781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &4449751828774969737
 GameObject:
   m_ObjectHideFlags: 0
@@ -3253,6 +3523,7 @@ GameObject:
   - component: {fileID: 6103962934461338960}
   - component: {fileID: 7407649739062394313}
   - component: {fileID: 1564756218414577082}
+  - component: {fileID: 8052928481572765764}
   m_Layer: 0
   m_Name: pharaon_statue_5
   m_TagString: Untagged
@@ -3425,6 +3696,22 @@ PolygonCollider2D:
       - {x: 0.35, y: -2.37}
       - {x: 0.52, y: -2.28}
       - {x: 0.69, y: -2.1699998}
+--- !u!114 &8052928481572765764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4449751828774969737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &4802037141350260487
 GameObject:
   m_ObjectHideFlags: 0
@@ -3583,7 +3870,7 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 1867754752989160721}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8855578171874521579
 SpriteRenderer:
@@ -4411,6 +4698,7 @@ GameObject:
   - component: {fileID: 3070814042874982469}
   - component: {fileID: 8727096936886834371}
   - component: {fileID: 7103623370660202136}
+  - component: {fileID: 2447088071925918958}
   m_Layer: 0
   m_Name: jug_2 (1)
   m_TagString: Untagged
@@ -4554,6 +4842,22 @@ PolygonCollider2D:
       - {x: 0.53999996, y: -1.24}
       - {x: 0.56, y: -1.09}
       - {x: 0.52, y: -1.01}
+--- !u!114 &2447088071925918958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5544561703001038594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &5794891318329570892
 GameObject:
   m_ObjectHideFlags: 0
@@ -4565,6 +4869,7 @@ GameObject:
   - component: {fileID: 3199187125623323469}
   - component: {fileID: 3213104653509368672}
   - component: {fileID: 9142767051920919218}
+  - component: {fileID: 3607844326288458282}
   m_Layer: 0
   m_Name: pharaon_statue_3
   m_TagString: Untagged
@@ -4737,6 +5042,22 @@ PolygonCollider2D:
       - {x: 0.35, y: -2.37}
       - {x: 0.52, y: -2.28}
       - {x: 0.69, y: -2.1699998}
+--- !u!114 &3607844326288458282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5794891318329570892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &5866993335032170575
 GameObject:
   m_ObjectHideFlags: 0
@@ -4748,6 +5069,7 @@ GameObject:
   - component: {fileID: 2251142739464819392}
   - component: {fileID: 8078880922102575641}
   - component: {fileID: 7442752667875535330}
+  - component: {fileID: 2865015749896538595}
   m_Layer: 0
   m_Name: jug_1
   m_TagString: Untagged
@@ -4891,6 +5213,22 @@ PolygonCollider2D:
       - {x: 0.53999996, y: -1.24}
       - {x: 0.56, y: -1.09}
       - {x: 0.52, y: -1.01}
+--- !u!114 &2865015749896538595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5866993335032170575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &6177129598574068991
 GameObject:
   m_ObjectHideFlags: 0
@@ -5420,6 +5758,7 @@ GameObject:
   - component: {fileID: 428221067751485665}
   - component: {fileID: 8665498606725549348}
   - component: {fileID: 50220001140914494}
+  - component: {fileID: 3752580518145293524}
   m_Layer: 0
   m_Name: pharaon_statue_8_special (1)
   m_TagString: Untagged
@@ -5592,6 +5931,22 @@ PolygonCollider2D:
       - {x: 0.35, y: -2.37}
       - {x: 0.52, y: -2.28}
       - {x: 0.69, y: -2.1699998}
+--- !u!114 &3752580518145293524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6718859651447945828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &6860423546493291568
 GameObject:
   m_ObjectHideFlags: 0
@@ -5685,6 +6040,7 @@ GameObject:
   - component: {fileID: 2425562661139158666}
   - component: {fileID: 7021235333763931419}
   - component: {fileID: 7677189416354386436}
+  - component: {fileID: 9021199097982433643}
   m_Layer: 0
   m_Name: jug_1 (4)
   m_TagString: Untagged
@@ -5828,6 +6184,22 @@ PolygonCollider2D:
       - {x: 0.53999996, y: -1.24}
       - {x: 0.56, y: -1.09}
       - {x: 0.52, y: -1.01}
+--- !u!114 &9021199097982433643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7175332857473679977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &7385271086453194551
 GameObject:
   m_ObjectHideFlags: 0
@@ -5921,6 +6293,7 @@ GameObject:
   - component: {fileID: 2979453957380679170}
   - component: {fileID: 9184677981546247183}
   - component: {fileID: 5205283692733264569}
+  - component: {fileID: 7418599739395988276}
   m_Layer: 0
   m_Name: pharaon_statue_5 (2)
   m_TagString: Untagged
@@ -6093,6 +6466,22 @@ PolygonCollider2D:
       - {x: 0.35, y: -2.37}
       - {x: 0.52, y: -2.28}
       - {x: 0.69, y: -2.1699998}
+--- !u!114 &7418599739395988276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7504888610282044858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &7519183313791875083
 GameObject:
   m_ObjectHideFlags: 0
@@ -6344,6 +6733,7 @@ GameObject:
   - component: {fileID: 717500697694859848}
   - component: {fileID: 2036513649861379805}
   - component: {fileID: 713651034856405889}
+  - component: {fileID: 7712412581912184063}
   m_Layer: 0
   m_Name: jug_1 (1)
   m_TagString: Untagged
@@ -6487,6 +6877,22 @@ PolygonCollider2D:
       - {x: 0.53999996, y: -1.24}
       - {x: 0.56, y: -1.09}
       - {x: 0.52, y: -1.01}
+--- !u!114 &7712412581912184063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7675917055164177510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &7694123284008393296
 GameObject:
   m_ObjectHideFlags: 0
@@ -6599,7 +7005,7 @@ Transform:
   m_LocalScale: {x: 0.06, y: 0.06, z: 1}
   m_Children: []
   m_Father: {fileID: 1867754752989160721}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7136249095268824124
 SpriteRenderer:
@@ -7549,6 +7955,7 @@ GameObject:
   - component: {fileID: 3032181589804650460}
   - component: {fileID: 4488769230090955014}
   - component: {fileID: 509879932887121353}
+  - component: {fileID: 692839514346987246}
   m_Layer: 0
   m_Name: jug_2 (2)
   m_TagString: Untagged
@@ -7692,6 +8099,22 @@ PolygonCollider2D:
       - {x: 0.53999996, y: -1.24}
       - {x: 0.56, y: -1.09}
       - {x: 0.52, y: -1.01}
+--- !u!114 &692839514346987246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8236741845394734230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &8781220160408645701
 GameObject:
   m_ObjectHideFlags: 0
