@@ -19,7 +19,7 @@ public class Player : MonoBehaviour,
     private Rigidbody2D rb;
 
     private Animator animator;
-    private float lastIdleState = 0;
+    //private float lastIdleState = 1;
 
     private void Start()
     {
@@ -43,17 +43,32 @@ public class Player : MonoBehaviour,
     {
         rb.MovePosition(rb.position + direction * MoveSpeed * Time.fixedDeltaTime);
 
-        animator.SetFloat("Speed", direction.sqrMagnitude); // выставление скорости в состоянии (не является скоростью)
-        if (direction.sqrMagnitude == 0) //если перемещение закончилось, зафиксировать в состояниях текущее направление героя
+        if (rb.constraints != RigidbodyConstraints2D.FreezeAll)
         {
-            animator.SetFloat("IdleState", lastIdleState);
+            animator.SetFloat("Speed", direction.sqrMagnitude); // выставление скорости в состоянии (не является скоростью)
+
+            if (direction.sqrMagnitude != 0)
+            {
+                float idleState = 1;
+                if (direction.x != 0)
+                    idleState = (direction.x > 0) ? 2 : 3;
+                else
+                    idleState = (direction.y > 0) ? 0 : 1;
+                animator.SetFloat("IdleState", idleState);
+            }
         }
-        else
-        { //получить текущее направление перемещения
-            if (direction.x != 0)
-                lastIdleState = (direction.x > 0) ? 2 : 3;
-            else lastIdleState = (direction.y > 0) ? 0 : 1;
-        }
+
+        //if (direction.sqrMagnitude == 0) //если перемещение закончилось, зафиксировать в состояниях текущее направление героя
+        //{
+        //    animator.SetFloat("IdleState", lastIdleState);
+        //}
+        //else
+        //{ //получить текущее направление перемещения
+        //    if (direction.x != 0)
+        //        lastIdleState = (direction.x > 0) ? 2 : 3;
+        //    else lastIdleState = (direction.y > 0) ? 0 : 1;
+        //}
+
         animator.SetFloat("Horizontal", direction.x); //установить в состояниях нажатия на клавиши по оси x и y
         animator.SetFloat("Vertical", direction.y);
     }

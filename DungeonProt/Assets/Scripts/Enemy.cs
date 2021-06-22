@@ -91,12 +91,12 @@ public class Enemy : MonoBehaviour
 
         gameObject.transform.parent.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
-        if (dropsItem != null && dropsItem.Length>0)
+        if (dropsItem != null && dropsItem.Length > 0)
         {
             Vector3 enemyPosition = gameObject.transform.position;
             enemyPosition.y += 1;
             print(dropsItem.Length - 1);
-            Instantiate(dropsItem[Random.Range(0,dropsItem.Length-1)], enemyPosition, Quaternion.identity);
+            Instantiate(dropsItem[Random.Range(0, dropsItem.Length - 1)], enemyPosition, Quaternion.identity);
         }
     }
 }

@@ -4,35 +4,38 @@ using UnityEngine;
 
 public class MeleeAttack : MonoBehaviour
 {
+    public Animator animator;
+    public Animator idleAnimator;
+
     public Transform attackPoint;
     public LayerMask enemyLayers;
-    private new Rigidbody2D rigidbody;
+    public new Rigidbody2D rigidbody;
 
     public float attackRange = 0.3f;
-    public int damage = 20;
+    public int damage = 25;
 
-    // cause no animation yet
-    private bool inAttack;
-    public int attackTicks = 20;
-    private int attackTicksLeft;
+    public float attackRate = 1f;
+    private float nextAttackTime = 0f;
 
-    void Start()
-    {
-        inAttack = false;
-        rigidbody = gameObject.GetComponent<Rigidbody2D>();
-    }
+    private bool mousePressed = false;
 
     void Update()
     {
-        if (!inAttack && Input.GetMouseButton(0))
+        if (Time.time >= nextAttackTime)
         {
-            Attack();
+            if (Input.GetMouseButton(0) && !mousePressed)
+            {
+                Attack();
+                nextAttackTime = Time.time + 1f / attackRate;
+            }
         }
+        mousePressed = Input.GetMouseButton(0) ? true : false;
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
-        AttackFixedUpdate();
+        if (animator.GetCurrentAnimatorStateInfo(animator.GetLayerIndex("Base Layer")).IsName("Sword_Temp"))
+            rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
     private void Attack()
@@ -44,7 +47,7 @@ public class MeleeAttack : MonoBehaviour
         rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
 
         // animation lol
-        AttackAnimation();
+        animator.SetTrigger("Attack");
 
         // detect enemy
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
@@ -63,40 +66,33 @@ public class MeleeAttack : MonoBehaviour
         float dx = worldSpaceMousePosition.x - gameObject.transform.position.x;
         float dy = worldSpaceMousePosition.y - gameObject.transform.position.y;
 
-        Vector3 position = attackPoint.localPosition;
+        Vector3 position = Vector3.zero;
+        Quaternion rotation = Quaternion.identity;
+        Vector3 scale = attackPoint.localScale;
+        scale.x = Mathf.Abs(scale.x);
+
+        float idle = 1;
 
         if (Mathf.Abs(dx) > Mathf.Abs(dy))
         {
+            scale.x = Mathf.Sign(dx) * scale.x;
             position.x = Mathf.Sign(dx) * 0.5f;
+
+            idle = (Mathf.Sign(dx) > 0) ? 2 : 3;
         }
         else
         {
+            rotation.z = Mathf.Sign(dy) * 1f;
             position.y = Mathf.Sign(dy) * 0.5f;
+
+            idle = (Mathf.Sign(dy) > 0) ? 0 : 1;
         }
+
+        idleAnimator.SetFloat("IdleState", idle);
 
         attackPoint.localPosition = position;
-    }
-
-    // cause no animation yet
-    private void AttackAnimation()
-    {
-        attackPoint.gameObject.GetComponent<SpriteRenderer>().enabled = true;
-        attackTicksLeft = attackTicks;
-        inAttack = true;
-    }
-
-    private void AttackFixedUpdate()
-    {
-        if (inAttack)
-        {
-            if (--attackTicksLeft <= 0)
-            {
-                inAttack = false;
-                attackPoint.gameObject.GetComponent<SpriteRenderer>().enabled = false;
-                attackPoint.localPosition = Vector3.zero;
-                rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
-            }
-        }
+        attackPoint.rotation = rotation;
+        attackPoint.localScale = scale;
     }
 
     private void OnDrawGizmosSelected()
