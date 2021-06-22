@@ -58,17 +58,6 @@ public class Player : MonoBehaviour,
             }
         }
 
-        //if (direction.sqrMagnitude == 0) //если перемещение закончилось, зафиксировать в состояниях текущее направление героя
-        //{
-        //    animator.SetFloat("IdleState", lastIdleState);
-        //}
-        //else
-        //{ //получить текущее направление перемещения
-        //    if (direction.x != 0)
-        //        lastIdleState = (direction.x > 0) ? 2 : 3;
-        //    else lastIdleState = (direction.y > 0) ? 0 : 1;
-        //}
-
         animator.SetFloat("Horizontal", direction.x); //установить в состояниях нажатия на клавиши по оси x и y
         animator.SetFloat("Vertical", direction.y);
     }
