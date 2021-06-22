@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 349461886292666300}
   - component: {fileID: 8867854615918018656}
   - component: {fileID: 7801329946770689322}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4171,7 +4171,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.20530973, g: 0.7735849, b: 0.14960839, a: 1}
+      maxColor: {r: 0.2666667, g: 0.45058823, b: 0.8392157, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4887,7 +4887,7 @@ GameObject:
   - component: {fileID: 8057681897267963639}
   - component: {fileID: 8057681897267963638}
   - component: {fileID: 288864850913331562}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PlayerObject
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -5270,7 +5270,7 @@ GameObject:
   - component: {fileID: 6925694770864381512}
   - component: {fileID: 6925694770864381516}
   - component: {fileID: 6925694770864381519}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5398,7 +5398,7 @@ GameObject:
   - component: {fileID: 8057681895770982484}
   - component: {fileID: 8057681895770982487}
   - component: {fileID: 8057681896573876537}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: MeleeAttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
